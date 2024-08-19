@@ -1,0 +1,21 @@
+name: 01 - Building Blocks
+
+on: push
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  echo-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello, world!"
+
+  echo-goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Failed Step
+        run: |
+          echo I will fail
+          exit 1
+      - name: Say Goodbye
+        run: echo "Goodbye!"
