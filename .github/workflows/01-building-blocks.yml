@@ -18,3 +18,7 @@ jobs:
           exit 0
       - name: Say Goodbye
         run: echo "Goodbye!"
+
+      - name: Finish
+        run: echo "Esto debe correr"
+        if: success()
