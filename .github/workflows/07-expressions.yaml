@@ -6,14 +6,14 @@ on:
         inputs:
             debug:
                 type: boolean
-                default: false
+                default: true
 
 jobs:
     echo:
         runs-on: ubuntu-latest
         steps:
             - name: "[debug] Print start-up data"
-              if: ${{inputs.debug == false}}
+              if: ${{inputs.debug}}
               run: |
                 echo "Triggered by: ${{github.event_name}}"
                 echo "Branch: ${{github.ref}}"
